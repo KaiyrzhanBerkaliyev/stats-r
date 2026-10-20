@@ -21,3 +21,5 @@ source("R/SecondChapter.R")
 source("R/ThirdChapter.R")
 
 No external packages are required. Only base R and stats are used.
+
+link:https://github.com/KaiyrzhanBerkaliyev/stats-r
