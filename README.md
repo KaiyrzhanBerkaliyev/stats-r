@@ -1,38 +1,23 @@
-# misalumnos
+Statistical Methods in R
 
-Paquete con funciones en **español** para tus alumnos.
+Hand-written R implementations of the core techniques 
+from a Statistical Methods course. Most functions are 
+built from first principles (moments, sums, loops) instead of R's 
+built-ins, so the code mirrors the formulas used in class and can
+be checked step by step.
 
-## Instalación local (rápida)
+Contents
+File	Topic
+R/firstChapter.R ->	 raw data, frequency tables, grouped (interval) data
+R/SecondChapter.R ->	contingency tables, covariance, correlation, linear regression
+R/ThirdChapter.R	 ->  ts objects, autocorrelation, moving averages
 
-1. Descomprime el `.zip`.
-2. En R ejecuta:
+Getting started
 
-```r
-install.packages("devtools")        # si hace falta
-devtools::install_local("misalumnos")
-library(misalumnos)
-```
+Clone the repository and, from its root folder, load the files you need in R:
 
-## Funciones incluidas
+source("R/firstChapter.R")
+source("R/SecondChapter.R")
+source("R/ThirdChapter.R")
 
-- `media(x)`, `varianza(x)`, `desviacion(x)`
-- `cuantiles(x, probs=c(.25,.5,.75))`
-- `normalizar(x)`, `estandarizar(x)`
-- `correlacion(x, y, metodo="pearson")`
-- `regresion_lineal(x, y)`
-- `grafica(x, y=NULL, tipo="p")`
-- `grafica_residuos(modelo)`
-- `datos_ejemplo(n=50, seed=NULL)`
-
-## Ejemplo rápido
-
-```r
-library(misalumnos)
-set.seed(123)
-df <- datos_ejemplo(30)
-media(df$y)
-m <- regresion_lineal(df$x, df$y)
-summary(m)
-grafica(df$x, df$y)
-grafica_residuos(m)
-```
+No external packages are required. Only base R and stats are used.
